@@ -54,15 +54,6 @@ O **AquaFlow** é uma aplicação Java baseada em Spring Boot projetada para aju
 
 ---
 
-## Testes Automatizados
-
-O projeto conta com uma suíte de testes unitários para garantir que a lógica de negócio (`HidratacaoService`) funcione corretamente, cobrindo casos de sucesso e tratamento de erros (entradas inválidas). Para rodar os testes manualmente, basta executar:
-
-```bash
-./mvnw test
-```
-
----
 
 ## Passos Futuros (Backlog)
 
@@ -73,7 +64,7 @@ O AquaFlow está em sua versão primária, contando apenas com uma interface CLI
 - [ ] **API RESTful:** Exposição de endpoints para que outras aplicações possam consumir os dados de hidratação.
 - [ ] **Notificações:** Envio de lembretes para o usuário beber água em intervalos regulares.
 - [ ] **Perfil de Usuário:** Cálculo automático de meta sugerida com base no peso e idade do usuário.
-
+- [ ] **Dockerfile:** Utilização do Docker para fácil compactação da aplicação
 ---
 
 Obrigado pela sua atenção, agradeceria o feedback!
