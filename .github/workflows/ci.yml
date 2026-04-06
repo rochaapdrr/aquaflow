@@ -25,4 +25,4 @@ jobs:
         run: mvn checkstyle:check
 
       - name: Passo 4 - Executar Testes Automatizados
-        run: ./mvnw test
+        run: mvn test
