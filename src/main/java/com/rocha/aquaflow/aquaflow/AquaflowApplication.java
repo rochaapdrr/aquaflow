@@ -1,0 +1,13 @@
+package com.rocha.aquaflow.aquaflow;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class AquaflowApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(AquaflowApplication.class, args);
+	}
+
+}
