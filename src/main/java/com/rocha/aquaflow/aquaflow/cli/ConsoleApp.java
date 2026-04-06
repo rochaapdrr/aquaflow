@@ -1,13 +1,12 @@
-package com.rocha.aquaflow.aquaflow.CLI;
+package com.rocha.aquaflow.aquaflow.cli;
 
-import com.rocha.aquaflow.aquaflow.Business.HidratacaoService;
+import com.rocha.aquaflow.aquaflow.business.HidratacaoService;
+import java.util.Scanner;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-import java.util.Scanner;
-import org.springframework.context.annotation.Profile;
-
-@Profile("!test") //  NÃO roda no perfil de teste
+@Profile("!test")
 @Component
 public class ConsoleApp implements CommandLineRunner {
     private final HidratacaoService service;
@@ -40,7 +39,6 @@ public class ConsoleApp implements CommandLineRunner {
                     int consumido = scanner.nextInt();
                     service.adicionarConsumo(consumido);
                     break;
-
                 case 2:
                     System.out.println("\n--- STATUS ---");
                     System.out.println("Consumido: " + service.getConsumido() + " ml");
@@ -53,11 +51,10 @@ public class ConsoleApp implements CommandLineRunner {
                         System.out.println(" Continue! Você está no caminho.");
                     }
                     break;
-
                 case 0:
                     System.out.println("Encerrando...");
                     System.exit(0);
-
+                    break;
                 default:
                     System.out.println("Opção inválida.");
             }

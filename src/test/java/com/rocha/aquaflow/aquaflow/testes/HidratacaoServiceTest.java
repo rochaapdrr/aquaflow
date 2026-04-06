@@ -1,6 +1,11 @@
-package com.rocha.aquaflow.aquaflow.Testes;
-import static org.junit.jupiter.api.Assertions.*;
-import com.rocha.aquaflow.aquaflow.Business.HidratacaoService;
+package com.rocha.aquaflow.aquaflow.testes;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import com.rocha.aquaflow.aquaflow.business.HidratacaoService;
 import org.junit.jupiter.api.Test;
 
 class HidratacaoServiceTest {
@@ -14,9 +19,6 @@ class HidratacaoServiceTest {
 
         assertEquals(1500, service.calcularRestante(), "Deveria faltar 1500ml");
         assertFalse(service.metaAtingida());
-        System.out.println("Meta: " + service.getMetaDiaria());
-        System.out.println("Consumido: " + service.getConsumido());
-        System.out.println("Atingiu: " + service.metaAtingida());
     }
 
     @Test
