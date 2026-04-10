@@ -35,7 +35,7 @@ O **AquaFlow** é uma aplicação Java baseada em Spring Boot projetada para aju
 ### Passos
 1. Clone o repositório:
    ```bash
-    git clone [https://github.com/SEU_USUARIO/aquaflow.git](https://github.com/SEU_USUARIO/aquaflow.git)
+    git clone [https://github.com/rochaapdrr/aquaflow.git](https://github.com/rochaapdrr/aquaflow.git)
 
 2. Entre na pasta:
 
