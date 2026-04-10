@@ -1,14 +1,24 @@
-package com.rocha.aquaflow.aquaflow.testes;
+package com.rocha.aquaflow.testes;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.rocha.aquaflow.aquaflow.business.HidratacaoService;
+import com.rocha.aquaflow.business.HidratacaoService;
+import com.rocha.aquaflow.cli.ConsoleApp;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
+
+@SpringBootTest
+@ActiveProfiles("test")
 class HidratacaoServiceTest {
+
+    @MockitoBean
+    private ConsoleApp consoleApp;
 
     @Test
     void deveRegistrarConsumoCaminhoFeliz() {

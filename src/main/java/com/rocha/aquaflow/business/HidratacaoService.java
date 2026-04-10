@@ -1,4 +1,4 @@
-package com.rocha.aquaflow.aquaflow.business;
+package com.rocha.aquaflow.business;
 
 import org.springframework.stereotype.Service;
 

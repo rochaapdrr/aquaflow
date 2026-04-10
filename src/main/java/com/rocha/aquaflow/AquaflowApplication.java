@@ -1,4 +1,4 @@
-package com.rocha.aquaflow.aquaflow;
+package com.rocha.aquaflow;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

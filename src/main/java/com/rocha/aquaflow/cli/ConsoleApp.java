@@ -1,6 +1,6 @@
-package com.rocha.aquaflow.aquaflow.cli;
+package com.rocha.aquaflow.cli;
 
-import com.rocha.aquaflow.aquaflow.business.HidratacaoService;
+import com.rocha.aquaflow.business.HidratacaoService;
 import java.util.Scanner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
@@ -47,6 +47,7 @@ public class ConsoleApp implements CommandLineRunner {
 
                     if (service.metaAtingida()) {
                         System.out.println(" Parabéns! Meta atingida!");
+                        break;
                     } else {
                         System.out.println(" Continue! Você está no caminho.");
                     }
