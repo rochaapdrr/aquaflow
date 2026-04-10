@@ -14,6 +14,17 @@ O **AquaFlow** é uma aplicação Java baseada em Spring Boot projetada para aju
     - Execução de testes automatizados (JUnit 5).
 
 ---
+## Vizualização do projeto no terminal:
+
+<img width="460" height="283" alt="auaflow - image 3" src="https://github.com/user-attachments/assets/4431e26c-7bc8-4cfd-b990-e806a3128219" />  
+
+<img width="368" height="145" alt="aquaflow - image 2" src="https://github.com/user-attachments/assets/dde9cefd-d711-4629-8210-99d23e97aee7" />  
+
+<img width="538" height="245" alt="aquaflow - image" src="https://github.com/user-attachments/assets/b138810e-69a6-4e75-9186-2933e8b07357" />  
+
+
+
+---
 
 ##  Tecnologias Utilizadas
 
