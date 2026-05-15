@@ -1,81 +1,113 @@
-# 💧 AquaFlow - Gerenciador de Hidratação
+# 💧 AquaFlow v2 – Gerenciador de Hidratação
 
-O **AquaFlow** é uma aplicação Java baseada em Spring Boot projetada para ajudar usuários a monitorarem seu consumo diário de água. Através de uma interface de linha de comando (CLI), o sistema permite definir metas personalizadas e registrar o consumo ao longo do dia.
+> **🔗 Deploy:** [https://aquaflow-zeta.vercel.app/](https://aquaflow-zeta.vercel.app/) 
 
----
-
-##  Funcionalidades Atuais
-
-- **Definição de Meta:** Permite configurar quantos ml de água o usuário deseja beber por dia.
-- **Registro de Consumo:** Adiciona a quantidade de água ingerida.
-- **Status em Tempo Real:** Mostra quanto foi consumido, quanto falta para a meta e valida se a meta foi atingida.
-- **Integração Contínua (CI):** Pipeline configurada no GitHub Actions com:
-    - Análise estática de código (Checkstyle - Padrão Google).
-    - Execução de testes automatizados (JUnit 5).
-
----
-## Vizualização do projeto no terminal:
-
-<img width="460" height="283" alt="auaflow - image 3" src="https://github.com/user-attachments/assets/4431e26c-7bc8-4cfd-b990-e806a3128219" />  
-
-<img width="368" height="145" alt="aquaflow - image 2" src="https://github.com/user-attachments/assets/dde9cefd-d711-4629-8210-99d23e97aee7" />  
-
-<img width="538" height="245" alt="aquaflow - image" src="https://github.com/user-attachments/assets/b138810e-69a6-4e75-9186-2933e8b07357" />  
-
-
+AquaFlow é um gerenciador de hidratação diária com **integração climática**. A aplicação consulta a temperatura atual da sua região e sugere um ajuste na meta de consumo de água para dias quentes.
 
 ---
 
-##  Tecnologias Utilizadas
+## ✨ Funcionalidades
 
-- **Java 21** 
-- **Spring Boot**
-- **Maven** (Gerenciador de dependências)
-- **JUnit 5** (Testes unitários)
-- **Checkstyle** (Qualidade de código)
-- **GitHub Actions** (CI/CD)
-
----
-
-##  Como Rodar o Projeto
-
-### Pré-requisitos
-- Java 17+ instalado.
-- Maven instalado (opcional, pode usar o wrapper `./mvnw`).
-
-### Passos
-1. Clone o repositório:
-   ```bash
-    git clone [https://github.com/rochaapdrr/aquaflow.git](https://github.com/rochaapdrr/aquaflow.git)
-
-2. Entre na pasta:
-
-    ```Bash
-   cd aquaflow
-
-3. Compile e rode os testes:
-
-    ```Bash
-    ./mvnw clean test
-
-4.  Execute a aplicação:
-
-    ```Bash
-    ./mvnw spring-boot:run
+- **Definição de Meta Diária** – Presets rápidos (1,5L / 2L / 2,5L / 3L) ou valor personalizado
+- **Integração Climática (Open-Meteo API)** – Sugere ml extras com base na temperatura local
+- **Registro de Consumo** – Botões rápidos (+150ml, +200ml, +300ml, +500ml) ou valor livre
+- **Progresso Visual** – Anel animado com percentual em tempo real
+- **Histórico do Dia** – Log de todos os registros com horário
+- **Interface Responsiva** – Funciona em desktop e mobile
 
 ---
 
+## 🛠️ Tecnologias
 
-## Passos Futuros (Backlog)
+| Camada | Tecnologia |
+|---|---|
+| Frontend | React 18 + Vite |
+| Lógica de negócio | JavaScript puro (sem dependências externas) |
+| API Externa | [Open-Meteo](https://open-meteo.com/) (gratuita, sem chave) |
+| Testes | Vitest + Testing Library |
+| CI/CD | GitHub Actions |
+| Deploy | Vercel |
 
-O AquaFlow está em sua versão primária, contando apenas com uma interface CLI, porém em constante evolução. Os próximos marcos de desenvolvimento incluem:
-
-- [ ] **Interface Front-end:** Criação de uma interface web moderna utilizando React ou Angular.
-- [ ] **Integração com Banco de Dados:** Implementação de persistência de dados utilizando Spring Data JPA e PostgreSQL/H2, permitindo histórico de consumo de dias anteriores.
-- [ ] **API RESTful:** Exposição de endpoints para que outras aplicações possam consumir os dados de hidratação.
-- [ ] **Notificações:** Envio de lembretes para o usuário beber água em intervalos regulares.
-- [ ] **Perfil de Usuário:** Cálculo automático de meta sugerida com base no peso e idade do usuário.
-- [ ] **Dockerfile:** Utilização do Docker para fácil compactação da aplicação
 ---
 
-Obrigado pela sua atenção, agradeceria o feedback!
+## 🧪 Testes
+
+O projeto possui **testes unitários** e **testes de integração**:
+
+```bash
+# Rodar todos os testes
+npm test
+
+# Modo watch (desenvolvimento)
+npm run test:watch
+
+# Com relatório de cobertura
+npm run test:coverage
+```
+
+### Cobertura de testes
+
+| Arquivo | Tipo | Casos |
+|---|---|---|
+| `hidratacaoService.test.js` | Unitário | 11 casos (caminho feliz + erros + edge cases) |
+| `weatherService.test.js` | **Integração** | 8 casos (mock HTTP, erros, validação de URL) |
+
+---
+
+## 🚀 Rodando localmente
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/seu-usuario/aquaflow.git
+cd aquaflow
+
+# 2. Instale as dependências
+npm install
+
+# 3. Inicie o servidor de desenvolvimento
+npm run dev
+
+# 4. Acesse em http://localhost:5173
+```
+
+---
+
+## 🔄 Pipeline CI/CD (GitHub Actions)
+
+O arquivo `.github/workflows/ci.yml` executa automaticamente em cada push:
+
+1. **🧪 Lint & Testes** – Roda todos os testes unitários e de integração + cobertura
+2. **🏗️ Build** – Compila o projeto com Vite (garante que o build de produção não quebra)
+3. **🚀 Deploy** – Publica automaticamente na Vercel quando mergeado na `main`
+
+### Secrets necessários no GitHub
+
+| Secret | Como obter |
+|---|---|
+| `VERCEL_TOKEN` | [vercel.com/account/tokens](https://vercel.com/account/tokens) |
+| `VERCEL_ORG_ID` | `vercel env pull` na raiz do projeto |
+| `VERCEL_PROJECT_ID` | `vercel env pull` na raiz do projeto |
+
+---
+
+## 📋 Entrega Intermediária – Checklist
+
+- [x] Issue criada descrevendo a integração com a API Open-Meteo
+- [x] Branch `entrega-intermediaria` criada a partir da `main`
+- [x] Integração com API pública (Open-Meteo – temperatura e clima)
+- [x] Testes de integração implementados (`weatherService.test.js`)
+- [x] Deploy publicado na Vercel
+- [x] README atualizado com link do deploy
+- [x] Pull Request abrindo da `entrega-intermediaria` → `main` com `closes #1`
+
+---
+
+## 🌐 API Utilizada – Open-Meteo
+
+- **Endpoint:** `https://api.open-meteo.com/v1/forecast`
+- **Dados usados:** `temperature_2m` e `weathercode`
+- **Documentação:** [open-meteo.com/en/docs](https://open-meteo.com/en/docs)
+
+---
+
+*Migrado de Java/Spring Boot para JavaScript/React como parte da Etapa Intermediária.*
