@@ -1,6 +1,6 @@
 # 💧 AquaFlow v2 – Gerenciador de Hidratação
 
-> **🔗 Deploy:** [https://aquaflow.vercel.app](https://aquaflow.vercel.app) *(atualize com seu link após o deploy)*
+> **🔗 Deploy:** [https://aquaflow.vercel.app](https://aquaflow.vercel.app) 
 
 AquaFlow é um gerenciador de hidratação diária com **integração climática**. A aplicação consulta a temperatura atual da sua região e sugere um ajuste na meta de consumo de água para dias quentes.
 
@@ -105,7 +105,6 @@ O arquivo `.github/workflows/ci.yml` executa automaticamente em cada push:
 ## 🌐 API Utilizada – Open-Meteo
 
 - **Endpoint:** `https://api.open-meteo.com/v1/forecast`
-- **Gratuita:** Sim, sem chave de API
 - **Dados usados:** `temperature_2m` e `weathercode`
 - **Documentação:** [open-meteo.com/en/docs](https://open-meteo.com/en/docs)
 
