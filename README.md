@@ -1,6 +1,6 @@
 # 💧 AquaFlow v2 – Gerenciador de Hidratação
 
-> **🔗 Deploy:** [https://aquaflow.vercel.app](https://aquaflow.vercel.app) 
+> **🔗 Deploy:** [https://aquaflow-zeta.vercel.app/](https://aquaflow-zeta.vercel.app/) 
 
 AquaFlow é um gerenciador de hidratação diária com **integração climática**. A aplicação consulta a temperatura atual da sua região e sugere um ajuste na meta de consumo de água para dias quentes.
 
